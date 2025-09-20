@@ -9,9 +9,9 @@
   "license": "ISC",
   "repository": "github:probot/smee.io",
   "scripts": {
-    "start": "node ./index.js",
+    "start": "NODE_ENV=production PORT=3333 node ./index.js",
     "start-dev": "concurrently \"nodemon --ignore src/ ./index.js\" \"webpack -w --mode development\"",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "redis:start": "docker run -d -p 6379:6379 --name probot-redis --rm redis",
